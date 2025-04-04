@@ -12,7 +12,7 @@ It provides basic functionality for reading Parquet files with different encodin
    Reads a Parquet file with PLAIN encoding.
 
 2. **read_plain_parquet_partitioned.py**  
-   Reads a partitioned Parquet file by navigating through folders and extracting the relevant data.
+   Reads a 'PLAIN'-encoded partitioned Parquet by navigating through folders and extracting the data into a Pandas Dataframe.
 
 3. **read_dictionary_parquet.py**  
    An attempt to read a Parquet file that uses dictionary encoding with RLE (Run-Length Encoding) or Bitpacking.
@@ -21,17 +21,15 @@ It provides basic functionality for reading Parquet files with different encodin
 
 The Thrift protocol is a framework for cross-language services development, created by Facebook. It allows for efficient and compact serialization and communication of data structures, providing support for multiple programming languages. Thrift enables developers to define data types and service interfaces in a language-neutral file, then automatically generate code in different programming languages. In this project, Thrift is used for serializing and deserializing data within Parquet files, making it easier to parse the data efficiently.
 
-Note: You can generate your own python classes for Thrift protocol by using one of those commands:
+Note: You can generate your own python classes (gen-py folder) for Thrift protocol by using one of those commands:
 
 thrift --gen py example_metadata.thrift
 thrift --gen py parquet.thrift
 
-## Parquet file Layout
+## Parquet file Layout and Metadata
 
-The general layout of a parquet file is the following:
 ![Format](images/file_format.gif)
 
-And the metadata:
 ![Metadata](images/file_layout.gif)
 
 ## RLE (Run-Length Encoding) and Bitpacking
