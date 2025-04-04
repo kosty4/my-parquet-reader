@@ -29,12 +29,10 @@ thrift --gen py parquet.thrift
 ## Parquet file Layout
 
 The general layout of a parquet file is the following:
-[alt text](images/file_format.gif "Format")
+![Format](images/file_format.gif)
 
 And the metadata:
-[alt text](images/file_layout.gif "Metadata")
-
-
+![Metadata](images/file_layout.gif)
 
 ## RLE (Run-Length Encoding) and Bitpacking
 
